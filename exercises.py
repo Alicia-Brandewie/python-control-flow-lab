@@ -126,19 +126,20 @@ check_voting_eligibility()
 
 def calculate_dog_years():
     # Your control flow logic goes here
-    human_age = input("Input a dog's age: ")
-    int(human_age)
-    dog_years_old = (
-        if human_age == 1 or 2:
-            human_age * 10
-        elif human_age >= 3:
-            human_age * 7 + 20 
-    )
-    print(f"The dog's age in dog years is {dog_years_old}.")
+    age = input("Input a dog's age: ")
+
+    int_age = int(age, 0)
+    if int_age <= 2:
+        # int_age * 10 
+        print(f"The dog's age in dog years is {int_age * 10}.")
+    elif int_age >= 3:
+        print(f"The dog's age in dog years is {(int_age -2) * 7 +20}")
+
+    
 
 # Call the function
 calculate_dog_years()
-#syntax Error
+#infinity loop
 
 
 
