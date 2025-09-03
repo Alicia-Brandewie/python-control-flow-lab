@@ -72,20 +72,34 @@ check_letter()
 # # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
-# def check_voting_eligibility():
-#     # Your control flow logic goes here
-#     age = input('Please enter your age: ')
-#     int(age)
-#     if age > 0 and age >= 18:
-#         print('You are eligible to vote.')
-#     else:
-#         print('You are not eligible to vote.') 
+def check_voting_eligibility():
+    # Your control flow logic goes here
+    age = input('Please enter your age in years: ')
+
+    if type(age) == str or float:
+        num_age = int(age, 0)
+        if num_age >= 18:
+            print('You are eligible to vote.')
+        elif num_age <= 17:
+            print('You are not eligible to vote.') 
+    elif type(age) == float:
+        round_age = int(age, 0)
+        if round_age >= 18:
+            print('You are eligible to vote.')
+        elif round_age<= 17:
+            print('You are not eligible to vote.') 
+    else:     
+        print('Input not valid. Please enter a number.') 
+
+
+        
 
 
 
-# # Call the function
-# check_voting_eligibility()
-# #TypeError: '>=' not supported between instances of 'str' and 'int'
+# Call the function
+check_voting_eligibility()
+# works with int but NOT with floats
+# ValueError: invalid literal for int() with base 0: '45.5' for BOTH line 79 '== str or float' OR line 79 '== str' and 85 '== float'
 
 
 
@@ -110,21 +124,21 @@ check_letter()
 # # - Convert the string input to an integer using `int()`.
 # # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
-# def calculate_dog_years():
-#     # Your control flow logic goes here
-#     human_age = input("Input a dog's age: ")
-#     int(human_age)
-#     dog_years_old = (
-#         if human_age == 1 or 2:
-#             human_age * 10
-#         elif human_age >= 3:
-#             human_age * 7 + 20 
-#     )
-#     print(f"The dog's age in dog years is {dog_years_old}.")
+def calculate_dog_years():
+    # Your control flow logic goes here
+    human_age = input("Input a dog's age: ")
+    int(human_age)
+    dog_years_old = (
+        if human_age == 1 or 2:
+            human_age * 10
+        elif human_age >= 3:
+            human_age * 7 + 20 
+    )
+    print(f"The dog's age in dog years is {dog_years_old}.")
 
-# # Call the function
-# calculate_dog_years()
-# #syntax Error
+# Call the function
+calculate_dog_years()
+#syntax Error
 
 
 
