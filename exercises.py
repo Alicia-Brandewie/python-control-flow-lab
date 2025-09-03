@@ -39,10 +39,12 @@
 def check_letter():
     # Your control flow logic goes here
 
-    letter = input('Enter a single letter, upper or lower case, to determine its case: ')
-    if letter == 'a' or 'e' or 'i' or 'o' or 'u':
+    letter = input('Enter a single letter, upper or lower case, to determine its case: ').lower()
+    vowel_tuple = ('a', 'e', 'i', 'o', 'u')
+    consonant_tuple = ('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z')
+    if letter in vowel_tuple:
         print(f'The letter {letter} is a vowel.')
-    elif letter !=  'a' or 'e' or 'i' or 'o' or 'u':
+    elif letter in consonant_tuple:
         print(f'The letter {letter} is a consonant.')
     else:
         print('Invalid.')
@@ -51,7 +53,6 @@ def check_letter():
 
 # Call the function
 check_letter()
-# #gives vowel no matter what
 
 
 
@@ -71,19 +72,19 @@ check_letter()
 # # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
-def check_voting_eligibility():
-    # Your control flow logic goes here
-    age = input('Please enter your age: ')
-    int(age)
-    if age > 0 and age >= 18:
-        print('You are eligible to vote.')
-    else:
-        print('You are not eligible to vote.') 
+# def check_voting_eligibility():
+#     # Your control flow logic goes here
+#     age = input('Please enter your age: ')
+#     int(age)
+#     if age > 0 and age >= 18:
+#         print('You are eligible to vote.')
+#     else:
+#         print('You are not eligible to vote.') 
 
 
 
-# Call the function
-check_voting_eligibility()
+# # Call the function
+# check_voting_eligibility()
 # #TypeError: '>=' not supported between instances of 'str' and 'int'
 
 
@@ -109,21 +110,21 @@ check_voting_eligibility()
 # # - Convert the string input to an integer using `int()`.
 # # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
-def calculate_dog_years():
-    # Your control flow logic goes here
-    human_age = input("Input a dog's age: ")
-    int(human_age)
-    dog_years_old = (
-        if human_age == 1 or 2:
-            human_age * 10
-        elif human_age >= 3:
-            human_age * 7 + 20 
-    )
-    print(f"The dog's age in dog years is {dog_years_old}.")
+# def calculate_dog_years():
+#     # Your control flow logic goes here
+#     human_age = input("Input a dog's age: ")
+#     int(human_age)
+#     dog_years_old = (
+#         if human_age == 1 or 2:
+#             human_age * 10
+#         elif human_age >= 3:
+#             human_age * 7 + 20 
+#     )
+#     print(f"The dog's age in dog years is {dog_years_old}.")
 
-# Call the function
-calculate_dog_years()
-#syntax Error
+# # Call the function
+# calculate_dog_years()
+# #syntax Error
 
 
 
@@ -143,28 +144,28 @@ calculate_dog_years()
 # Hints:
 # - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
 
-def weather_advice():
-    # Your control flow logic goes here
-    cold = input("Is it cold?(yes/no)")
-    raining = input("Is it raining?(yes/no)")
+# def weather_advice():
+#     # Your control flow logic goes here
+#     cold = input("Is it cold?(yes/no)")
+#     raining = input("Is it raining?(yes/no)")
 
-    if cold == 'yes' and raining == 'yes':
-        print("Wear a waterproof coat.")
+#     if cold == 'yes' and raining == 'yes':
+#         print("Wear a waterproof coat.")
 
-    elif cold == 'yes' and raining != 'yes':
-        print("Wear a warm coat.")
+#     elif cold == 'yes' and raining != 'yes':
+#         print("Wear a warm coat.")
 
-    elif cold != 'yes' and raining == 'yes':
-        print("Carry an umbrella.")
+#     elif cold != 'yes' and raining == 'yes':
+#         print("Carry an umbrella.")
 
-    elif cold != 'yes' and raining != 'yes':
-        print("Wear light clothing.")
+#     elif cold != 'yes' and raining != 'yes':
+#         print("Wear light clothing.")
 
 
 
-# Call the function
-weather_advice()
-#WORKS
+# # Call the function
+# weather_advice()
+# #WORKS
 
 
 # Exercise 5: What's the Season?
@@ -186,22 +187,22 @@ weather_advice()
 # - Adjust the season based on the day of the month when needed.
 # - Ensure to validate input formats and handle unexpected inputs gracefully.
 
-def determine_season():
-    # Your control flow logic goes here
-    month = input('Enter the month of the year as three characters (ie: Jan - Dec): ').lower()
-    day = input('Enter the day(numeral) of the month: ')
-    season = (
-        if (month == 'dec' and day >= 21) or (month == 'jan' or 'feb' ) or (month == 'mar' and  day <= 19):
-            return 'Winter'
-        if (month == 'mar' and day >= 20) or (month == 'apr' or 'may' ) or (month == 'jun' and  day <= 20):
-            return 'Spring'
-        if (month == 'jun' and day >= 21) or (month == 'jul' or 'aug' ) or (month == 'sep' and  day <= 21):
-            return 'Summer'
-        if (month == 'sep' and day >= 22) or (month == 'oct' or 'nov' ) or (month == 'dec' and  day <= 20):                                              
-            return 'Fall'
-    )
-        print(f'{month} {day} is in {season}.')
+# def determine_season():
+#     # Your control flow logic goes here
+#     month = input('Enter the month of the year as three characters (ie: Jan - Dec): ').lower()
+#     day = input('Enter the day(numeral) of the month: ')
+#     season = (
+#         if (month == 'dec' and day >= 21) or (month == 'jan' or 'feb' ) or (month == 'mar' and  day <= 19):
+#             return 'Winter'
+#         if (month == 'mar' and day >= 20) or (month == 'apr' or 'may' ) or (month == 'jun' and  day <= 20):
+#             return 'Spring'
+#         if (month == 'jun' and day >= 21) or (month == 'jul' or 'aug' ) or (month == 'sep' and  day <= 21):
+#             return 'Summer'
+#         if (month == 'sep' and day >= 22) or (month == 'oct' or 'nov' ) or (month == 'dec' and  day <= 20):                                              
+#             return 'Fall'
+#     )
+#         print(f'{month} {day} is in {season}.')
 
-# Call the function
-determine_season()
-#LOST IN THE SAUCE
+# # Call the function
+# determine_season()
+# #LOST IN THE SAUCE
