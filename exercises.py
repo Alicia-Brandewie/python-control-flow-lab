@@ -1,24 +1,3 @@
-# # Exercise 0: Example
-# #
-# # This is a practice exercise to help you understand how to write code "inside" a provided Python function.
-# #
-# # We'll create a function that checks a condition and prints a specific greeting message based on that condition.
-# #
-# # Requirements:
-# # - The function is named `print_greeting`.
-# # - Inside the function, declare a variable `python_is_fun` and set it to `True`.
-# # - Use a conditional statement to check if `python_is_fun` is `True`.
-# # - If `python_is_fun` is `True`, print the message "Python is fun!"
-
-# def print_greeting():
-#     # Your code goes here. Remember to indent!
-#     python_is_fun = True
-#     if python_is_fun:
-#         print("Python is fun!")
-
-# # Call the function
-# print_greeting()
-
 # # Exercise 1: Vowel or Consonant
 # #
 # # Write a Python function named `check_letter` that determines if a given letter
@@ -34,25 +13,25 @@
 # # Hints:
 # # - Use the `input()` function to capture user input.
 # # - Utilize the `in` operator to check for vowels.
-# # - Ensure to provide feedback for non-alphabetical or invalid entries.
+# # # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
-def check_letter():
-    # Your control flow logic goes here
+# def check_letter():
+#     # Your control flow logic goes here
 
-    letter = input('Enter a single letter, upper or lower case, to determine its case: ').lower()
-    vowel_tuple = ('a', 'e', 'i', 'o', 'u')
-    consonant_tuple = ('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z')
-    if letter in vowel_tuple:
-        print(f'The letter {letter} is a vowel.')
-    elif letter in consonant_tuple:
-        print(f'The letter {letter} is a consonant.')
-    else:
-        print('Invalid.')
+#     letter = input('Enter a single letter, upper or lower case, to determine its case: ').lower()
+#     vowel_tuple = ('a', 'e', 'i', 'o', 'u')
+#     consonant_tuple = ('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z')
+#     if letter in vowel_tuple:
+#         print(f'The letter {letter} is a vowel.')
+#     elif letter in consonant_tuple:
+#         print(f'The letter {letter} is a consonant.')
+#     else:
+#         print('Invalid.')
         
 
 
-# Call the function
-check_letter()
+# # Call the function
+# check_letter()
 
 
 
@@ -72,27 +51,40 @@ check_letter()
 # # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
+# def check_voting_eligibility():
+#     # Your control flow logic goes here
+#     age = input('Please enter your age in years: ')
+
+#     if type(age) == str or float:
+#         num_age = int(age, 0)
+#         if num_age >= 18:
+#             print('You are eligible to vote.')
+#         elif num_age <= 17:
+#             print('You are not eligible to vote.') 
+#     elif type(age) == float:
+#         round_age = int(age, 0)
+#         if round_age >= 18:
+#             print('You are eligible to vote.')
+#         elif round_age<= 17:
+#             print('You are not eligible to vote.') 
+#     else:     
+#         print('Input not valid. Please enter a number.') 
+
+
+
 def check_voting_eligibility():
-    # Your control flow logic goes here
-    age = input('Please enter your age in years: ')
+    try:
+        age_input = input("Please enter your age: ")
+        age = float(age_input)
 
-    if type(age) == str or float:
-        num_age = int(age, 0)
-        if num_age >= 18:
-            print('You are eligible to vote.')
-        elif num_age <= 17:
-            print('You are not eligible to vote.') 
-    elif type(age) == float:
-        round_age = int(age, 0)
-        if round_age >= 18:
-            print('You are eligible to vote.')
-        elif round_age<= 17:
-            print('You are not eligible to vote.') 
-    else:     
-        print('Input not valid. Please enter a number.') 
-
-
-        
+        if age < 0:
+            print("Age cannot be negative. Please enter a valid age.")
+        elif age >= 18:
+            print("You are eligible to vote.")
+        else:
+            print("You are not eligible to vote.")
+    except ValueError:
+        print("Invalid input. Please enter a numeric value for age.")
 
 
 
@@ -122,25 +114,20 @@ check_voting_eligibility()
 # # Hints:
 # # - Use the `input()` function to capture user input.
 # # - Convert the string input to an integer using `int()`.
-# # - Apply conditional logic to perform the correct age calculation based on the dog's age.
+# # # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
-def calculate_dog_years():
-    # Your control flow logic goes here
-    age = input("Input a dog's age: ")
+# def calculate_dog_years():
+#     # Your control flow logic goes here
+#     age = input("Input a dog's age: ")
 
-    int_age = int(age, 0)
-    if int_age <= 2:
-        # int_age * 10 
-        print(f"The dog's age in dog years is {int_age * 10}.")
-    elif int_age >= 3:
-        print(f"The dog's age in dog years is {(int_age -2) * 7 +20}")
+#     int_age = int(age, 0)
+#     if int_age <= 2:
+#         print(f"The dog's age in dog years is {int_age * 10}.")
+#     elif int_age >= 3:
+#         print(f"The dog's age in dog years is {(int_age -2) * 7 +20}")
 
-    
-
-# Call the function
-calculate_dog_years()
-#infinity loop
-
+# # Call the function
+# calculate_dog_years()
 
 
 # Exercise 4: Weather Advice
@@ -206,18 +193,65 @@ calculate_dog_years()
 #     # Your control flow logic goes here
 #     month = input('Enter the month of the year as three characters (ie: Jan - Dec): ').lower()
 #     day = input('Enter the day(numeral) of the month: ')
-#     season = (
+
+#     winter_tuple = ('dec', 'jan', 'feb', 'mar')
+#     spring_tuple =('mar', 'apr', 'may', 'jun')
+#     summer_tuple = ('jun', 'jul', 'aug', 'sep')
+#     fall_tuple = ('sep', 'oct', 'nov' ,'dec')
+
+#     int_day = int(day, 0)
+
+#     for month in winter_tuple:
 #         if (month == 'dec' and day >= 21) or (month == 'jan' or 'feb' ) or (month == 'mar' and  day <= 19):
-#             return 'Winter'
-#         if (month == 'mar' and day >= 20) or (month == 'apr' or 'may' ) or (month == 'jun' and  day <= 20):
-#             return 'Spring'
-#         if (month == 'jun' and day >= 21) or (month == 'jul' or 'aug' ) or (month == 'sep' and  day <= 21):
-#             return 'Summer'
-#         if (month == 'sep' and day >= 22) or (month == 'oct' or 'nov' ) or (month == 'dec' and  day <= 20):                                              
-#             return 'Fall'
-#     )
+#             season = 'Winter'
+
+#     # season = (
+#     #     if (month == 'dec' and day >= 21) or (month == 'jan' or 'feb' ) or (month == 'mar' and  day <= 19):
+#     #         return 'Winter'
+#     #     if (month == 'mar' and day >= 20) or (month == 'apr' or 'may' ) or (month == 'jun' and  day <= 20):
+#     #         return 'Spring'
+#     #     if (month == 'jun' and day >= 21) or (month == 'jul' or 'aug' ) or (month == 'sep' and  day <= 21):
+#     #         return 'Summer'
+#     #     if (month == 'sep' and day >= 22) or (month == 'oct' or 'nov' ) or (month == 'dec' and  day <= 20):                                              
+#     #         return 'Fall'
+#     # )
 #         print(f'{month} {day} is in {season}.')
 
 # # Call the function
 # determine_season()
-# #LOST IN THE SAUCE
+#LOST IN THE SAUCE
+
+
+def determine_season():
+    month_input = input("Enter the month of the year (Jan - Dec): ").strip().capitalize()
+    day_input = input("Enter the day of the month: ").strip()
+
+    # Validate day input
+    try:
+        day = int(day_input)
+        if day < 1 or day > 31:
+            print("Invalid day. Please enter a number between 1 and 31.")
+            return
+    except ValueError:
+        print("Invalid input. Please enter a numeric value for the day.")
+        return
+
+    # Normalize month input
+    month = month_input.lower()
+
+    # Determine season
+    if (month == 'dec' and day >= 21) or month in ('jan', 'feb') or (month == 'mar' and day <= 19):
+        season = 'Winter'
+    elif (month == 'mar' and day >= 20) or month in ('apr', 'may') or (month == 'jun' and day <= 20):
+        season = 'Spring'
+    elif (month == 'jun' and day >= 21) or month in ('jul', 'aug') or (month == 'sep' and day <= 21):
+        season = 'Summer'
+    elif (month == 'sep' and day >= 22) or month in ('oct', 'nov') or (month == 'dec' and day <= 20):
+        season = 'Fall'
+    else:
+        print("Invalid date or month format.")
+        return
+    print(f"{month_input} {day} is in {season}.")
+
+# Call the function
+determine_season()
